@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>SoCal Rental Homes</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Beautiful Southern California Rental Homes">
+  <meta name="keywords" content="Rental Homes, Vacation Homes, Santa Monica, Malibu, Getaway">
+  <meta name="author" content="Tech Behind The Scenes">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="shortcut icon" href="favicon-key.ico" type="image/x-icon"><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+</head>
+<body>
+
+
+<div id="app">
+<vue-top-nav></vue-top-nav>
+
+<!--Hero Content-->
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-2">Contact Us</h1> 
+  </div>
+</div>
+
+<!--Main Content-->
+<div id="thank-you" class="col-12 text-center invisible" style="position: absolute; z-index: -1;">
+	<h4>Thank you! We will respond shortly.</h4>
+</div>
+
+<div class="container">
+<!-- Begin MailChimp Signup Form -->
+<div id="mc_embed_signup">
+<form action="https://techbehindthescenes.us15.list-manage.com/subscribe/post?u=d3e2f2e8ad58af56fce4d7675&amp;id=b62b299d77" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate onsubmit="$('#mc_embed_signup').addClass('animated zoomOutUp'); $('#thank-you').removeClass('invisible'); $('#thank-you').addClass('animated zoomInUp');">
+	<div class="row">
+		<div class="col-4">
+			<h2>Sign up for deals and updates</h2>
+		</div>
+		<div class="col-8">
+			<div class="form-group">
+				<label for="mce-FNAME">First Name </label>
+				<input type="text" value="" name="FNAME" class="form-control" id="mce-FNAME">
+			</div>
+			<div class="form-group">
+				<label for="mce-LNAME">Last Name </label>
+				<input type="text" value="" name="LNAME" class="form-control" id="mce-LNAME">
+			</div>
+			<div class="form-group">
+				<label for="mce-EMAIL">Email Address  <span class="form-text-text-muted">(required)</span>
+				</label>
+				<input type="email" value="" name="EMAIL" class="required email form-control" id="mce-EMAIL">
+			</div>
+
+			<div id="mce-responses" class="clear">
+				<div class="response" id="mce-error-response" style="display:none"></div>
+				<div class="response" id="mce-success-response" style="display:none"></div>
+			</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+			<div style="position: absolute; left: -5000px;" aria-hidden="true">
+				<input type="text" name="b_d3e2f2e8ad58af56fce4d7675_b62b299d77" tabindex="-1" value="">
+			</div>
+			<div class="clear">
+				<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary btn-success mt-2">
+			</div>
+		</div>
+	</div>
+</form>
+</div>
+<!--End mc_embed_signup-->
+</div>
+
+<vue-footer></vue-footer>
+</div>
+
+<!--JAVASCRIPT-->
+
+<script src="https://unpkg.com/vue"></script>
+<script type="text/javascript" src="index.js"></script>
+<!-- <link href="http://cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css"> -->
+  <script type='text/javascript' src='http://s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+  <script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='BOOKID';ftypes[3]='text';fnames[4]='PROPID';ftypes[4]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+
+</body>
+</html>

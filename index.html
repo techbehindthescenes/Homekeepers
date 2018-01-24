@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>SoCal Rental Homes</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Beautiful Southern California Rental Homes">
+  <meta name="keywords" content="Rental Homes, Vacation Homes, Santa Monica, Malibu, Getaway">
+  <meta name="author" content="Tech Behind The Scenes">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="shortcut icon" href="favicon-key.ico" type="image/x-icon">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+<div id="app">
+<vue-top-nav></vue-top-nav>
+
+<!--Hero Content-->
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-2">Your perfect getaway</h1> 
+    <p class="display-4">Sit back, relax</p> 
+  </div>
+</div>
+
+<!--Main Content-->
+
+<!-- Search by date -->
+
+<div class="row">
+<div class="container bg-dark text-white my-2">
+		<form class="px-2">
+		<div class="form-group row align-items-end">
+			<div class="col-lg-4 col-md-12 col-s-12 col-xs-12">
+				<label for="to-search-input" class="mt-2">Where</label>
+				<input class="form-control mb-2" type="text" placeholder="Destination?" id="to-search-input">
+			</div>
+				<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+				  <label for="arrival-date-input" class="">Arrive</label>
+					<input class="form-control mb-2" type="date" value="2017-08-19" id="arrival-date-input">
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+					<label for="depart-date-input" class="">Depart</label>
+					<input class="form-control mb-2" type="date" value="2017-08-21" id="depart-date-input">
+				</div>
+			<div class="col-lg-2 col-md-12 col-s-12 col-xs-12 pt-2">
+				<button type="submit" class="btn btn-primary btn-success btn-block mb-lg-2 mb-md-0 mb-s-0 mb-xs-0">Search</button>
+			</div>
+		</div>
+	</form>
+</div>
+</div>
+
+
+<!--Featured Rentals-->
+
+<div class="row">
+	<div class="container">
+		<h2 class="text-center text-uppercase padding-top-bottom">Featured Rentals</h2>
+	</div>
+</div>
+
+<div class="row">
+	<div class="container">
+		<vue-property-cards :num-properties="3"></vue-property-cards>
+	</div>
+</div>
+
+<div class="row">
+	<div class="container container-btn-block">
+		<a href="#" class="btn btn-secondary btn-large btn-block">View More Rental Homes</a>
+	</div>
+</div>
+
+<!--Features by Map-->
+
+<div class="row">
+	<div class="container">
+		<h2 class="text-center text-uppercase padding-top-bottom">Explore So. Cal's Coastal Cities</h2>
+		<ul class="nav nav-tabs" role="tablist">
+		  <li class="nav-item">
+			<a class="nav-link active" data-toggle="tab" href="#santamonica" role="tab">Santa Monica</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" data-toggle="tab" href="#longbeach" role="tab">Long Beach</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" data-toggle="tab" href="#malibu" role="tab">Malibu</a>
+		  </li>
+		</ul>
+	</div>
+</div>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="santamonica" role="tabpanel">
+	<div class="row">
+		<div class="container">
+			<div id="googleMap" style="width:100%;height:400px;"></div>
+		</div>
+	</div>
+  </div>
+  
+  <div class="tab-pane" id="longbeach" role="tabpanel">todo- add map</div>
+  <div class="tab-pane" id="malibu" role="tabpanel">todo- add map</div>
+</div>
+
+
+<vue-footer></vue-footer>
+</div>
+
+<!--JAVASCRIPT-->
+
+<script src="https://unpkg.com/vue"></script>
+<script type="text/javascript" src="index.js"></script>
+
+<!--Google Maps Javascript-->
+<script async defer>
+function myMap() {
+var mapProp= {
+    center:new google.maps.LatLng(34.037085, -118.869756),
+    zoom:18,
+	mapTypeId: google.maps.MapTypeId.HYBRID,
+};
+var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+var marker = new google.maps.Marker({
+	position: new google.maps.LatLng(34.037085, -118.869756)
+});
+
+marker.setMap(map);
+
+var infowindow = new google.maps.InfoWindow({
+  content:"Hello World!"
+  });
+
+google.maps.event.addListener(marker, 'click', function() {
+  infowindow.open(map,marker);
+  });
+}
+</script>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALQvt6CbWeOPVCe-hxLGBiyxgYa5yc32g&callback=myMap"></script>
+
+<!--Star favorites Javascript-->
+<script>
+function select() {
+    document.getElementById("star-select").style.display = "block";
+	document.getElementById("star-unselect").style.display = "none";
+}
+
+function unselect() {
+	document.getElementById("star-unselect").style.display = "block";
+	document.getElementById("star-select").style.display = "none";
+
+}
+</script>
+
+  
+</body>
+</html>
